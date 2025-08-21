@@ -1,0 +1,283 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Headings */
+h1, h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center; /* align-items doesn’t apply to text */
+}
+
+/* Navbar */
+.navbar {
+    background-color: #fff;
+    height: 80px;
+    margin: 20px;
+    border-radius: 40px;
+    padding: 0.5rem;
+}
+
+.nav-brand {
+    font-weight: 200;
+    font-size: 20px;
+    color: blue;
+    transition: color 0.3s;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul li a{
+    white-space: nowrap;
+}
+
+.logo{
+    height: 50px;
+    width: auto;
+    vertical-align: middle;
+}
+
+/* Navbar toggler */
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+}
+
+.navbar-toggler:focus,
+.btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link {
+    color: #000;
+    font-weight: 500;
+    position: relative; /* needed for ::before underline */
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #000;
+}
+
+@media (min-width: 991px) {
+    .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: blue;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::before,
+    .nav-link:active::before {
+        width: 100%;
+        visibility: visible;
+    }
+}
+
+/* Signin button */
+.signin-button {
+    background-color: blue;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.signin-button:hover {
+    background-color: grey;     
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('IMAGES/Hero.jpg') no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.hero-section::before {
+    background-color: black;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.5;
+}
+
+/* Menu */
+.menu h1,
+.menu p {
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+    justify-items: center;
+}
+
+/* Desktop: 3 columns */
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 767px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* CFC, Growth Track, Ministries Card Styles */
+.cfc-card, .growth-track-card, .ministries-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cfc-card h3, .growth-track-card h3, .ministries-card h3 {
+    margin: 0.75rem 0 0.25rem;
+    font-weight: 400;
+}
+
+.cfc-card a, .growth-track-card a, .ministries-card a {
+    margin: 0.25rem 0 1rem;
+    text-decoration: none;
+    color: #0056b3;
+    font-weight: 500;
+}
+
+.cfc-card img, .growth-track-card img, .ministries-card img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.cfc-card:hover img, .growth-track-card:hover img, .ministries-card:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* Welcome Section */
+.welcome-section {
+    background: url('IMAGES/welcome.jpg') no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.welcome-section h1 {
+    color: white;
+    font-size: 3rem;
+    margin-top: 20vh;
+    text-align: center;
+}
+
+.welcome-section p {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* Ministries */
+.ministries h3 {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+/* Growth Track */
+.growth-track-card-menu {
+    padding: 2rem 1rem;
+}
+
+.growth-track {
+    background-color: #add8e6;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.growth-track-card h2 {
+    color: black;
+}
+
+.growth-track-card h3, p {
+    color: black; /* fixed: avoid invalid color-scheme */
+}
+
+.growth-track button {
+    background-color: blue;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.growth-track button:hover {
+    background-color: gray;
+}
+
+/* Footer */
+footer {
+    background-color: #d9e1f1; 
+    color: #000;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+footer img {
+    width: 80px;
+    margin-bottom: 1rem;
+}
+
+footer a {
+    color: blue;
+    margin: 0 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    color: orangered;
+    transform: scale(1.1);
+}
